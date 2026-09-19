@@ -1,0 +1,27 @@
+.link-underline {
+    position: relative;
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background: #D4AF37;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover::after,
+.link-underline.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.text-outline {
+    -webkit-text-stroke: 1px rgba(212, 175, 55, 0.35);
+    color: transparent;
+}

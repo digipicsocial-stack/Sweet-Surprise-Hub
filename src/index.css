@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 24 50% 3%;
+        --foreground: 40 33% 93%;
+        --card: 26 45% 7%;
+        --card-foreground: 40 33% 93%;
+        --popover: 26 45% 7%;
+        --popover-foreground: 40 33% 93%;
+        --primary: 46 65% 52%;
+        --primary-foreground: 24 50% 3%;
+        --secondary: 26 45% 10%;
+        --secondary-foreground: 40 33% 93%;
+        --muted: 26 30% 12%;
+        --muted-foreground: 33 17% 65%;
+        --accent: 46 65% 52%;
+        --accent-foreground: 24 50% 3%;
+        --destructive: 12 62% 34%;
+        --destructive-foreground: 40 33% 93%;
+        --border: 25 44% 10%;
+        --input: 25 44% 16%;
+        --ring: 46 65% 52%;
+        --radius: 0.125rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground font-body;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: #D4AF37;
+        color: #0C0704;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #0C0704;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #2B1B10;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #3d2918;
+    }
+}
+
+.grain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.overline-label {
+    @apply text-xs uppercase tracking-[0.25em] font-medium text-gold;
+}
+
+.flush-input {
+    @apply w-full bg-transparent border-0 border-b border-bark py-3 text-cream placeholder:text-sand/50 focus:border-gold focus:outline-none focus:ring-0 transition-colors duration-300;
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
